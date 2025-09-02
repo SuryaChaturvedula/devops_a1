@@ -43,3 +43,20 @@ def test_add_workout_invalid_duration(client):
     }, follow_redirects=True)
     assert response.status_code == 200
     assert b'Duration must be a number' in response.data
+
+def test_clear_workouts(client):
+    """Test clearing all workouts"""
+    # First add a workout
+    client.post('/add_workout', data={
+        'workout': 'Running',
+        'duration': '30'
+    }, follow_redirects=True)
+    
+    # Then clear all workouts
+    response = client.post('/clear_workouts', follow_redirects=True)
+    assert response.status_code == 200
+    assert b'All workouts have been cleared' in response.data
+    
+    # Verify no workouts are displayed
+    response = client.get('/')
+    assert b'No workouts logged yet' in response.data

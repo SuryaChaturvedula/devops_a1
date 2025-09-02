@@ -12,6 +12,12 @@ workouts = []
 def index():
     return render_template('index.html', workouts=workouts)
 
+@app.route('/clear_workouts', methods=['POST'])
+def clear_workouts():
+    workouts.clear()
+    flash('All workouts have been cleared!', 'success')
+    return redirect(url_for('index'))
+
 @app.route('/add_workout', methods=['POST'])
 def add_workout():
     workout = request.form.get('workout')
