@@ -1,15 +1,15 @@
-# ACEest Fitness and Gym 🏋️‍♂️
+# ACEest Fitness and Gym 
 
 A user-friendly web application for tracking your workouts and managing gym activities. This project is built with Flask and includes automated testing and deployment features.
 
-## What Does This App Do? 🎯
+## What Does This App Do?
 
 - Track your workouts easily
 - Record workout duration
 - View your workout history
 - Simple and clean interface
 
-## Project Structure 📁
+## Project Structure
 
 ```
 devops_a1/
@@ -24,11 +24,11 @@ devops_a1/
 └── .github/workflows/    # CI/CD configuration
 ```
 
-## Local Setup 🚀
+## Local Setup 
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/SuryaChaturvedula/devops_a1
 cd devops_a1
 ```
 
@@ -57,7 +57,7 @@ To run the tests:
 pytest
 ```
 
-## Docker Setup 🐳
+## Docker Setup 
 
 Docker makes it easy to run the application anywhere! Here's how:
 
@@ -73,23 +73,23 @@ docker run -p 5000:5000 aceest-fitness
 
 The application will be available at `http://localhost:5000`
 
-## Understanding the CI/CD Pipeline 🔄
+## Understanding the CI/CD Pipeline 
 
 Every time you push code to GitHub, the following happens automatically:
 
-1. **Testing Stage** ✅
+1. **Testing Stage** 
    - GitHub creates a fresh environment
    - Installs Python and all dependencies
    - Runs all the test cases
    - If tests fail, stops here and notifies you
 
-2. **Build Stage** 🏗️
+2. **Build Stage** 
    - Only starts if all tests pass
    - Builds a Docker container
    - Verifies the container works
    - Prepares for deployment
 
-### How to Know If It Worked? 🤔
+### How to Know If It Worked?
 
 1. Go to your GitHub repository
 2. Click on "Actions" tab
@@ -97,26 +97,7 @@ Every time you push code to GitHub, the following happens automatically:
 4. Green checkmark ✅ = Everything worked!
    Red X ❌ = Something needs fixing
 
-## Common Issues and Solutions 🔧
-
-1. **Tests Failing?**
-   - Check the Actions tab for error details
-   - Run tests locally first: `pytest`
-   - Make sure all dependencies are installed
-
-2. **Docker Issues?**
-   - Ensure Docker is running on your machine
-   - Try building locally first
-   - Check port 5000 isn't already in use
-
-## Need Help? 🆘
-
-1. Check the error messages in GitHub Actions
-2. Run the tests locally to debug
-3. Make sure all files are committed and pushed
-4. Check if Docker is running properly
-
-## Development Tips 💡
+## Development Tips
 
 This project uses GitHub Actions for CI/CD. The pipeline:
 
